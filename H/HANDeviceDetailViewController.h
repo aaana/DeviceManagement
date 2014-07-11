@@ -1,5 +1,5 @@
 //
-//  HANSecondViewController.h
+//  HANDeviceDetailViewController.h
 //  H
 //
 //  Created by sse-34 on 14-7-10.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HANSecondViewController : UIViewController
+@interface HANDeviceDetailViewController : UIViewController
 
 @end

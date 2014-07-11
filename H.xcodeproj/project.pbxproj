@@ -14,14 +14,15 @@
 		22351171196E791700750268 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22351170196E791700750268 /* main.m */; };
 		22351175196E791700750268 /* HANAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22351174196E791700750268 /* HANAppDelegate.m */; };
 		22351178196E791700750268 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22351176196E791700750268 /* Main.storyboard */; };
-		2235117B196E791700750268 /* HANFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235117A196E791700750268 /* HANFirstViewController.m */; };
-		2235117E196E791700750268 /* HANSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2235117D196E791700750268 /* HANSecondViewController.m */; };
 		22351180196E791700750268 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2235117F196E791700750268 /* Images.xcassets */; };
 		22351187196E791700750268 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22351186196E791700750268 /* XCTest.framework */; };
 		22351188196E791700750268 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22351164196E791700750268 /* Foundation.framework */; };
 		22351189196E791700750268 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22351168196E791700750268 /* UIKit.framework */; };
 		22351191196E791700750268 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2235118F196E791700750268 /* InfoPlist.strings */; };
 		22351193196E791700750268 /* HTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22351192196E791700750268 /* HTests.m */; };
+		223511A3196E869400750268 /* HANRecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223511A2196E869400750268 /* HANRecordTableViewController.m */; };
+		223511A6196E871D00750268 /* HANDeviceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223511A5196E871D00750268 /* HANDeviceDetailViewController.m */; };
+		223511A9196E878A00750268 /* HANDeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223511A8196E878A00750268 /* HANDeviceTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +47,18 @@
 		22351173196E791700750268 /* HANAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HANAppDelegate.h; sourceTree = "<group>"; };
 		22351174196E791700750268 /* HANAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HANAppDelegate.m; sourceTree = "<group>"; };
 		22351177196E791700750268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		22351179196E791700750268 /* HANFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HANFirstViewController.h; sourceTree = "<group>"; };
-		2235117A196E791700750268 /* HANFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HANFirstViewController.m; sourceTree = "<group>"; };
-		2235117C196E791700750268 /* HANSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HANSecondViewController.h; sourceTree = "<group>"; };
-		2235117D196E791700750268 /* HANSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HANSecondViewController.m; sourceTree = "<group>"; };
 		2235117F196E791700750268 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22351185196E791700750268 /* HTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22351186196E791700750268 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2235118E196E791700750268 /* HTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HTests-Info.plist"; sourceTree = "<group>"; };
 		22351190196E791700750268 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		22351192196E791700750268 /* HTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTests.m; sourceTree = "<group>"; };
+		223511A1196E869400750268 /* HANRecordTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANRecordTableViewController.h; sourceTree = "<group>"; };
+		223511A2196E869400750268 /* HANRecordTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANRecordTableViewController.m; sourceTree = "<group>"; };
+		223511A4196E871D00750268 /* HANDeviceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANDeviceDetailViewController.h; sourceTree = "<group>"; };
+		223511A5196E871D00750268 /* HANDeviceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANDeviceDetailViewController.m; sourceTree = "<group>"; };
+		223511A7196E878A00750268 /* HANDeviceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANDeviceTableViewController.h; sourceTree = "<group>"; };
+		223511A8196E878A00750268 /* HANDeviceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANDeviceTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,13 +118,11 @@
 		2235116A196E791700750268 /* H */ = {
 			isa = PBXGroup;
 			children = (
+				2235119D196E863500750268 /* ViewController */,
+				2235119C196E862500750268 /* View */,
 				22351173196E791700750268 /* HANAppDelegate.h */,
 				22351174196E791700750268 /* HANAppDelegate.m */,
 				22351176196E791700750268 /* Main.storyboard */,
-				22351179196E791700750268 /* HANFirstViewController.h */,
-				2235117A196E791700750268 /* HANFirstViewController.m */,
-				2235117C196E791700750268 /* HANSecondViewController.h */,
-				2235117D196E791700750268 /* HANSecondViewController.m */,
 				2235117F196E791700750268 /* Images.xcassets */,
 				2235116B196E791700750268 /* Supporting Files */,
 			);
@@ -155,6 +156,26 @@
 				2235118F196E791700750268 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2235119C196E862500750268 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2235119D196E863500750268 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				223511A1196E869400750268 /* HANRecordTableViewController.h */,
+				223511A2196E869400750268 /* HANRecordTableViewController.m */,
+				223511A4196E871D00750268 /* HANDeviceDetailViewController.h */,
+				223511A5196E871D00750268 /* HANDeviceDetailViewController.m */,
+				223511A7196E878A00750268 /* HANDeviceTableViewController.h */,
+				223511A8196E878A00750268 /* HANDeviceTableViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,9 +276,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223511A6196E871D00750268 /* HANDeviceDetailViewController.m in Sources */,
 				22351175196E791700750268 /* HANAppDelegate.m in Sources */,
-				2235117B196E791700750268 /* HANFirstViewController.m in Sources */,
-				2235117E196E791700750268 /* HANSecondViewController.m in Sources */,
+				223511A9196E878A00750268 /* HANDeviceTableViewController.m in Sources */,
+				223511A3196E869400750268 /* HANRecordTableViewController.m in Sources */,
 				22351171196E791700750268 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +408,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "H/H-Prefix.pch";
 				INFOPLIST_FILE = "H/H-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -399,6 +422,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "H/H-Prefix.pch";
 				INFOPLIST_FILE = "H/H-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
