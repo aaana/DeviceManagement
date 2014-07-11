@@ -7,9 +7,9 @@
 //
 
 #import "HANDeviceTableViewController.h"
-
+#import "HANDeviceDetailViewController.h"
 @interface HANDeviceTableViewController ()
-
+@property (nonatomic) NSInteger cellCount;
 @end
 
 @implementation HANDeviceTableViewController
@@ -26,15 +26,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.cellCount=0;
+    //UI Methods
+    [self configureNavigationBar];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-
+#pragma mark -UI Methods
+-(void)configureNavigationBar{
+    //为navigationBar添加右侧按钮
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addDeviceCell)];
+    
+}
+#
+-(void)addDeviceCell{
+    self.cellCount++;
+    [self.tableView reloadData];
+    }
 
 #pragma mark - Table view data source
 
@@ -42,14 +50,14 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 3;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 3;
+    return self.cellCount;
 }
 
 
@@ -101,15 +109,20 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
+    HANDeviceDetailViewController *deviceDetailViewController=segue.destinationViewController;
+    deviceDetailViewController.deviceName=@"iPad #2";
+    deviceDetailViewController.deviceType=@"iPad";
+    deviceDetailViewController.deviceStatus=false;
+    
+        // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

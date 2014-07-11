@@ -26,9 +26,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configueView];
     // Do any additional setup after loading the view.
 }
 
+-(void)configueView{
+    self.deviceTypeLabel.text=self.deviceType;
+    self.deviceNameLabel.text=self.deviceName;
+    if(self.deviceStatus){
+        self.statusLabel.text=@"Avilable";
+    }else{
+        self.statusLabel.text=@"Borrowed";
+    }
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

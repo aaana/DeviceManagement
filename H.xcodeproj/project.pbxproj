@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22216A30196F87A10009D528 /* HANDeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22216A2F196F87A10009D528 /* HANDeviceTableViewCell.m */; };
 		22351165196E791700750268 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22351164196E791700750268 /* Foundation.framework */; };
 		22351167196E791700750268 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22351166196E791700750268 /* CoreGraphics.framework */; };
 		22351169196E791700750268 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22351168196E791700750268 /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22216A2E196F87A10009D528 /* HANDeviceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANDeviceTableViewCell.h; sourceTree = "<group>"; };
+		22216A2F196F87A10009D528 /* HANDeviceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANDeviceTableViewCell.m; sourceTree = "<group>"; };
 		22351161196E791700750268 /* H.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = H.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22351164196E791700750268 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22351166196E791700750268 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -85,6 +88,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22216A31196F88200009D528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		22351158196E791700750268 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 		2235116A196E791700750268 /* H */ = {
 			isa = PBXGroup;
 			children = (
+				22216A31196F88200009D528 /* Model */,
 				2235119D196E863500750268 /* ViewController */,
 				2235119C196E862500750268 /* View */,
 				22351173196E791700750268 /* HANAppDelegate.h */,
@@ -161,6 +172,8 @@
 		2235119C196E862500750268 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22216A2E196F87A10009D528 /* HANDeviceTableViewCell.h */,
+				22216A2F196F87A10009D528 /* HANDeviceTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -168,12 +181,12 @@
 		2235119D196E863500750268 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				223511A7196E878A00750268 /* HANDeviceTableViewController.h */,
+				223511A8196E878A00750268 /* HANDeviceTableViewController.m */,
 				223511A1196E869400750268 /* HANRecordTableViewController.h */,
 				223511A2196E869400750268 /* HANRecordTableViewController.m */,
 				223511A4196E871D00750268 /* HANDeviceDetailViewController.h */,
 				223511A5196E871D00750268 /* HANDeviceDetailViewController.m */,
-				223511A7196E878A00750268 /* HANDeviceTableViewController.h */,
-				223511A8196E878A00750268 /* HANDeviceTableViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -277,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				223511A6196E871D00750268 /* HANDeviceDetailViewController.m in Sources */,
+				22216A30196F87A10009D528 /* HANDeviceTableViewCell.m in Sources */,
 				22351175196E791700750268 /* HANAppDelegate.m in Sources */,
 				223511A9196E878A00750268 /* HANDeviceTableViewController.m in Sources */,
 				223511A3196E869400750268 /* HANRecordTableViewController.m in Sources */,
@@ -487,6 +501,7 @@
 				22351198196E791700750268 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22351199196E791700750268 /* Build configuration list for PBXNativeTarget "HTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +510,7 @@
 				2235119B196E791700750268 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
