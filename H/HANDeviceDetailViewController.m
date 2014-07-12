@@ -7,7 +7,7 @@
 //
 
 #import "HANDeviceDetailViewController.h"
-
+#import "HANDeviceModel.h"
 @interface HANDeviceDetailViewController ()
 
 @end
@@ -33,12 +33,12 @@
 
 #pragma mark -UI Methods
 -(void)configueView{
-    self.deviceTypeLabel.text=self.deviceType;
-    self.deviceNameLabel.text=self.deviceName;
-    if(self.deviceStatus){
-        self.statusLabel.text=@"Available";
-    }else{
+    self.deviceTypeLabel.text=self.deviceModel.deviceType;
+    self.deviceNameLabel.text=self.deviceModel.deviceName;
+    if(self.deviceModel.isBorrowed){
         self.statusLabel.text=@"Borrowed";
+    }else{
+        self.statusLabel.text=@"Available";
     }
 }
 

@@ -10,9 +10,7 @@
 #import "HANDeviceDetailViewController.h"
 #import "HANDeviceAddViewController.h"
 #import "HANDeviceModel.h"
-#import "HANRecordDetailViewController.h"
 #import "HANRecordTableViewController.h"
-#import "HANDataModel.h"
 #import "HANDeviceTableViewCell.h"
 @interface HANDeviceTableViewController ()
 @property (nonatomic) NSInteger cellCount;
@@ -139,9 +137,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     HANDeviceDetailViewController *deviceDetailViewController=segue.destinationViewController;
-    deviceDetailViewController.deviceName=@"iPad #2";
-    deviceDetailViewController.deviceType=@"iPad";
-    deviceDetailViewController.deviceStatus=false;
+    deviceDetailViewController.deviceModel=((HANDeviceTableViewCell *)sender).deviceModel;
+    
+//    deviceDetailViewController.deviceName=@"iPad #2";
+//    deviceDetailViewController.deviceType=@"iPad";
+//    deviceDetailViewController.deviceStatus=false;
     
         // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
