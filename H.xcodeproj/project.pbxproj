@@ -13,6 +13,7 @@
 		22216A3A1970D6D60009D528 /* HANDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22216A391970D6D60009D528 /* HANDataModel.m */; };
 		22216A401970DC360009D528 /* HANDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22216A3F1970DC360009D528 /* HANDeviceModel.m */; };
 		22216A4219710C690009D528 /* HANRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22216A4119710C690009D528 /* HANRecordModel.m */; };
+		22216A45197130A80009D528 /* HANRecordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22216A44197130A80009D528 /* HANRecordTableViewCell.m */; };
 		22351165196E791700750268 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22351164196E791700750268 /* Foundation.framework */; };
 		22351167196E791700750268 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22351166196E791700750268 /* CoreGraphics.framework */; };
 		22351169196E791700750268 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22351168196E791700750268 /* UIKit.framework */; };
@@ -54,6 +55,8 @@
 		22216A3E1970DC360009D528 /* HANDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANDeviceModel.h; sourceTree = "<group>"; };
 		22216A3F1970DC360009D528 /* HANDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANDeviceModel.m; sourceTree = "<group>"; };
 		22216A4119710C690009D528 /* HANRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANRecordModel.m; sourceTree = "<group>"; };
+		22216A43197130A80009D528 /* HANRecordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANRecordTableViewCell.h; sourceTree = "<group>"; };
+		22216A44197130A80009D528 /* HANRecordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANRecordTableViewCell.m; sourceTree = "<group>"; };
 		22351161196E791700750268 /* H.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = H.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22351164196E791700750268 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22351166196E791700750268 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -195,6 +198,8 @@
 			children = (
 				22216A2E196F87A10009D528 /* HANDeviceTableViewCell.h */,
 				22216A2F196F87A10009D528 /* HANDeviceTableViewCell.m */,
+				22216A43197130A80009D528 /* HANRecordTableViewCell.h */,
+				22216A44197130A80009D528 /* HANRecordTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				223511A9196E878A00750268 /* HANDeviceTableViewController.m in Sources */,
 				223511A3196E869400750268 /* HANRecordTableViewController.m in Sources */,
 				22216A3A1970D6D60009D528 /* HANDataModel.m in Sources */,
+				22216A45197130A80009D528 /* HANRecordTableViewCell.m in Sources */,
 				22216A341970CA830009D528 /* HANDeviceAddViewController.m in Sources */,
 				22351171196E791700750268 /* main.m in Sources */,
 				22216A401970DC360009D528 /* HANDeviceModel.m in Sources */,

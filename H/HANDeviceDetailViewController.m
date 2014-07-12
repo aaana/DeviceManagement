@@ -52,6 +52,8 @@
 -(void)didClickBorrowButton{
     NSLog(@"name:%@",self.nameTextField.text);
     NSLog(@"phone:%@",self.phoneTextField.text);
+    NSString *name=self.nameTextField.text;
+    NSString *phone=self.phoneTextField.text;
     
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
