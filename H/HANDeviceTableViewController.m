@@ -8,6 +8,12 @@
 
 #import "HANDeviceTableViewController.h"
 #import "HANDeviceDetailViewController.h"
+#import "HANDeviceAddViewController.h"
+#import "HANDeviceModel.h"
+#import "HANRecordDetailViewController.h"
+#import "HANRecordTableViewController.h"
+#import "HANDataModel.h"
+#import "HANDeviceTableViewCell.h"
 @interface HANDeviceTableViewController ()
 @property (nonatomic) NSInteger cellCount;
 @end
@@ -31,17 +37,26 @@
     [self configureNavigationBar];
     
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
 
 #pragma mark -UI Methods
 -(void)configureNavigationBar{
     //为navigationBar添加右侧按钮
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addDeviceCell)];
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didClickAddButton)];
     
 }
 #
--(void)addDeviceCell{
-    self.cellCount++;
-    [self.tableView reloadData];
+-(void)didClickAddButton{
+//    self.cellCount++;
+//    [self.tableView reloadData];
+    HANDeviceAddViewController *vc=[self.storyboard instantiateViewControllerWithIdentifier:@"DeviceAddViewController"];
+    [self.navigationController pushViewController:vc animated:YES];//页面跳转
+    
+    
+    
     }
 
 #pragma mark - Table view data source
@@ -57,15 +72,23 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return self.cellCount;
+    return [[[HANDataModel shareDataModel] deviceArray] count];
+//    return self.cellButton;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DeviceCell" forIndexPath:indexPath];
+
+    HANDeviceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DeviceCell" forIndexPath:indexPath];
+    cell.deviceModel=[[HANDataModel shareDataModel]getDeviceAtIndex:indexPath.row];
+    cell.deviceNameLabel.text=cell.deviceModel.deviceName;
     
-    // Configure the cell...
+    if (cell.deviceModel.isBorrowed) {
+      cell.deviceStatusLabel.text=@"Borrowed";
+    } else {
+        cell.deviceStatusLabel.text=@"Available";
+    }
     
     return cell;
 }

@@ -8,15 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class HANDeviceModel;
 @interface HANDeviceTableViewCell : UITableViewCell
-@property(nonatomic,strong)NSString *deviceName;
-@property(nonatomic,strong)NSString *deviceType;
-@property(nonatomic)BOOL deviceStatus;
-@property(nonatomic)NSInteger index;
+@property (weak, nonatomic) IBOutlet UILabel *deviceNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *deviceStatusLabel;
 
-
--(id)initWithIndex:(NSInteger)index
-          deviceName:(NSString *)name
-          deviceType:(NSString *)type
-      deviceStatus:(BOOL)status;
+@property(nonatomic,strong)
+HANDeviceModel *deviceModel;
 @end

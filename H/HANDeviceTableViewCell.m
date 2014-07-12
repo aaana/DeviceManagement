@@ -7,7 +7,7 @@
 //
 
 #import "HANDeviceTableViewCell.h"
-
+//Users/sse-34/Desktop/practice/H/H.xcodeproj
 @implementation HANDeviceTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -25,10 +25,7 @@
       deviceStatus:(BOOL)status{
     self=[super init];
     if(self){
-        self.index=index;
-        self.deviceName=name;
-        self.deviceType=type;
-        self.deviceStatus=status;
+
         
     }
     return self;

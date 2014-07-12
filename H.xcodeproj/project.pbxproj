@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		22216A30196F87A10009D528 /* HANDeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22216A2F196F87A10009D528 /* HANDeviceTableViewCell.m */; };
+		22216A341970CA830009D528 /* HANDeviceAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22216A331970CA830009D528 /* HANDeviceAddViewController.m */; };
+		22216A371970D4440009D528 /* HANRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22216A361970D4440009D528 /* HANRecordDetailViewController.m */; };
+		22216A3A1970D6D60009D528 /* HANDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22216A391970D6D60009D528 /* HANDataModel.m */; };
+		22216A401970DC360009D528 /* HANDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22216A3F1970DC360009D528 /* HANDeviceModel.m */; };
+		22216A4219710C690009D528 /* HANRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22216A4119710C690009D528 /* HANRecordModel.m */; };
 		22351165196E791700750268 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22351164196E791700750268 /* Foundation.framework */; };
 		22351167196E791700750268 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22351166196E791700750268 /* CoreGraphics.framework */; };
 		22351169196E791700750268 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22351168196E791700750268 /* UIKit.framework */; };
@@ -39,6 +44,16 @@
 /* Begin PBXFileReference section */
 		22216A2E196F87A10009D528 /* HANDeviceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANDeviceTableViewCell.h; sourceTree = "<group>"; };
 		22216A2F196F87A10009D528 /* HANDeviceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANDeviceTableViewCell.m; sourceTree = "<group>"; };
+		22216A321970CA830009D528 /* HANDeviceAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANDeviceAddViewController.h; sourceTree = "<group>"; };
+		22216A331970CA830009D528 /* HANDeviceAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANDeviceAddViewController.m; sourceTree = "<group>"; };
+		22216A351970D4440009D528 /* HANRecordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANRecordDetailViewController.h; sourceTree = "<group>"; };
+		22216A361970D4440009D528 /* HANRecordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANRecordDetailViewController.m; sourceTree = "<group>"; };
+		22216A381970D6D60009D528 /* HANDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANDataModel.h; sourceTree = "<group>"; };
+		22216A391970D6D60009D528 /* HANDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANDataModel.m; sourceTree = "<group>"; };
+		22216A3B1970DC280009D528 /* HANRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANRecordModel.h; sourceTree = "<group>"; };
+		22216A3E1970DC360009D528 /* HANDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HANDeviceModel.h; sourceTree = "<group>"; };
+		22216A3F1970DC360009D528 /* HANDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANDeviceModel.m; sourceTree = "<group>"; };
+		22216A4119710C690009D528 /* HANRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HANRecordModel.m; sourceTree = "<group>"; };
 		22351161196E791700750268 /* H.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = H.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22351164196E791700750268 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22351166196E791700750268 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,6 +106,12 @@
 		22216A31196F88200009D528 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22216A381970D6D60009D528 /* HANDataModel.h */,
+				22216A391970D6D60009D528 /* HANDataModel.m */,
+				22216A3B1970DC280009D528 /* HANRecordModel.h */,
+				22216A4119710C690009D528 /* HANRecordModel.m */,
+				22216A3E1970DC360009D528 /* HANDeviceModel.h */,
+				22216A3F1970DC360009D528 /* HANDeviceModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -187,6 +208,10 @@
 				223511A2196E869400750268 /* HANRecordTableViewController.m */,
 				223511A4196E871D00750268 /* HANDeviceDetailViewController.h */,
 				223511A5196E871D00750268 /* HANDeviceDetailViewController.m */,
+				22216A321970CA830009D528 /* HANDeviceAddViewController.h */,
+				22216A331970CA830009D528 /* HANDeviceAddViewController.m */,
+				22216A351970D4440009D528 /* HANRecordDetailViewController.h */,
+				22216A361970D4440009D528 /* HANRecordDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -291,10 +316,15 @@
 			files = (
 				223511A6196E871D00750268 /* HANDeviceDetailViewController.m in Sources */,
 				22216A30196F87A10009D528 /* HANDeviceTableViewCell.m in Sources */,
+				22216A371970D4440009D528 /* HANRecordDetailViewController.m in Sources */,
 				22351175196E791700750268 /* HANAppDelegate.m in Sources */,
+				22216A4219710C690009D528 /* HANRecordModel.m in Sources */,
 				223511A9196E878A00750268 /* HANDeviceTableViewController.m in Sources */,
 				223511A3196E869400750268 /* HANRecordTableViewController.m in Sources */,
+				22216A3A1970D6D60009D528 /* HANDataModel.m in Sources */,
+				22216A341970CA830009D528 /* HANDeviceAddViewController.m in Sources */,
 				22351171196E791700750268 /* main.m in Sources */,
+				22216A401970DC360009D528 /* HANDeviceModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

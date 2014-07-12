@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property(nonatomic,strong)NSString *deviceName;
 @property(nonatomic,strong)NSString *deviceType;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property(nonatomic)BOOL deviceStatus;
 @end
