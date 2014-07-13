@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface HANRecordDetailViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UILabel *deviceNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+@property (weak, nonatomic) IBOutlet UILabel *borrowDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *returnDatelabel;
+@property (weak, nonatomic) IBOutlet UIButton *returnButton;
+- (IBAction)returnButton:(id)sender;
+@property(nonatomic,strong)HANRecordModel *recordModel;
 @end

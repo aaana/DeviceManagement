@@ -29,7 +29,6 @@ static HANDataModel *dataModel=nil;
             self.deviceArray = [unarchiver decodeObject];
             [unarchiver finishDecoding];
         }
-        
         NSString *recordListPath = [self recordListPath];
         if ([[NSFileManager defaultManager] fileExistsAtPath:[self recordListPath]]) { // 检查保存借记信息的文件是否存在
             NSMutableData *recordData = [[NSMutableData alloc] initWithContentsOfFile:recordListPath];
@@ -38,7 +37,8 @@ static HANDataModel *dataModel=nil;
             [unarchiver finishDecoding];
         }
         
-        
+        [self readDeviceData];
+        [self readRecordData];
     }
     return self;
 }
@@ -53,6 +53,7 @@ static HANDataModel *dataModel=nil;
     //TODO
     NSLog(@"%@",self.deviceArray);
     [self saveData];//保存
+    
     
 }//添加设备信息
 -(void)addRecord:(HANRecordModel *)recordModel{
@@ -87,6 +88,8 @@ static HANDataModel *dataModel=nil;
 }
 
 -(void)saveData{
+    [self saveDeviceData];
+    [self saveRecordData];
     
 }
 
@@ -98,6 +101,24 @@ static HANDataModel *dataModel=nil;
     [archiver encodeObject:self.deviceArray];
     [archiver finishEncoding];
     [deviceData writeToFile:[self deviceListPath] atomically:YES];
+}
+-(void)readDeviceData{
+    NSString *devicelistpath=[self deviceListPath];
+    NSMutableData *deviceData=[[NSMutableData alloc]initWithContentsOfFile:devicelistpath];
+    if (deviceData.length!=0) {
+        NSKeyedUnarchiver *unarchiver=[[NSKeyedUnarchiver alloc]initForReadingWithData:deviceData];
+        self.deviceArray=[unarchiver decodeObject];
+        [unarchiver finishDecoding];
+    }
+}
+-(void)readRecordData{
+    NSString *recordlistpath=[self recordListPath];
+    NSMutableData *recordData=[[NSMutableData alloc]initWithContentsOfFile:recordlistpath];
+    if(recordData.length!=0){
+        NSKeyedUnarchiver *unarchiver=[[NSKeyedUnarchiver alloc]initForReadingWithData:recordData];
+        self.recordArray=[unarchiver decodeObject];
+        [unarchiver finishDecoding];
+    }
 }
 -(void)saveRecordData{
     NSMutableData *recordData=[[NSMutableData alloc]init];
@@ -111,7 +132,8 @@ static HANDataModel *dataModel=nil;
 #pragma mark Path
 
 -(NSString *)applicationDocumentsDirectoryPath{
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES)lastObject];
+    
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
 }
 
 

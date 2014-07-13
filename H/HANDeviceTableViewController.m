@@ -32,6 +32,7 @@
     [super viewDidLoad];
     //UI Methods
     [self configureNavigationBar];
+    NSLog(@"%@",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject]);
     
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -43,7 +44,7 @@
 -(void)configureNavigationBar{
     //为navigationBar添加右侧按钮
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didClickAddButton)];
-    
+
 }
 #
 -(void)didClickAddButton{

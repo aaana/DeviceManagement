@@ -8,6 +8,7 @@
 
 #import "HANDeviceDetailViewController.h"
 #import "HANDeviceModel.h"
+#import "HANRecordModel.h"
 @interface HANDeviceDetailViewController ()
 
 @end
@@ -30,6 +31,10 @@
     [self configueNavigationBar];
     // Do any additional setup after loading the view.
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self configueNavigationBar];
+}
 
 #pragma mark -UI Methods
 -(void)configueView{
@@ -37,6 +42,8 @@
     self.deviceNameLabel.text=self.deviceModel.deviceName;
     if(self.deviceModel.isBorrowed){
         self.statusLabel.text=@"Borrowed";
+        [self.nameTextField setEnabled:NO];
+        [self.phoneTextField setEnabled:NO];
     }else{
         self.statusLabel.text=@"Available";
     }
@@ -44,16 +51,31 @@
 
 -(void)configueNavigationBar{
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"Borrow"
-        style:UIBarButtonItemStyleDone
-        target:self
-        action:@selector(didClickBorrowButton)];
+                                                                           style:UIBarButtonItemStyleDone
+                                                                          target:self
+                                                                          action:@selector(didClickBorrowButton)];
+    if (self.deviceModel.isBorrowed) {
+//        self.navigationItem.rightBarButtonItem =nil;
+        [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    }
+
+    
+
 }
 
 -(void)didClickBorrowButton{
     NSLog(@"name:%@",self.nameTextField.text);
     NSLog(@"phone:%@",self.phoneTextField.text);
+    NSString *deviceName=self.deviceNameLabel.text;
     NSString *name=self.nameTextField.text;
     NSString *phone=self.phoneTextField.text;
+    HANRecordModel *recordModel=[[HANRecordModel alloc]initWithDeviceName:deviceName Name:name PhoneNumber:phone];
+     [[HANDataModel shareDataModel] addRecord:recordModel];
+//    [[HANDataModel shareDataModel]deleteDevice:self.deviceModel];
+    self.deviceModel.isBorrowed = YES;
+//    [[HANDataModel shareDataModel]addDevice:self.deviceModel];
+    [self configueNavigationBar];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

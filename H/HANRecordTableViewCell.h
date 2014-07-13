@@ -12,5 +12,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *deviceNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *isReturnedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *returnDateLabel;
-
+@property(nonatomic,strong)HANRecordModel *recordModel;
 @end

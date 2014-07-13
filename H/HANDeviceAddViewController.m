@@ -38,6 +38,7 @@
     HANDeviceModel *deviceModel = [[HANDeviceModel alloc] initWithDeviceName:deviceName DeviceType:deviceType];
     
     [[HANDataModel shareDataModel] addDevice:deviceModel];
+
   
     
     // 返回上一级页面

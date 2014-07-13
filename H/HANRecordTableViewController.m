@@ -7,7 +7,10 @@
 //
 
 #import "HANRecordTableViewController.h"
-
+#import "HANRecordTableViewCell.h"
+#import "HANRecordModel.h"
+#import "HANRecordDetailViewController.h"
+#import "HANDeviceModel.h"
 @interface HANRecordTableViewController ()
 
 @end
@@ -27,6 +30,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -40,16 +47,35 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [[[HANrecordModel shareDataModel] recordArray] count];
+//    return [[[HANrecordModel shareDataModel] recordArray] count];
+    return [[[HANDataModel shareDataModel]recordArray]count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecordCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
+    HANRecordTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecordCell" forIndexPath:indexPath];
+    cell.recordModel=[[HANDataModel shareDataModel]getRecordAtIndex:indexPath.row];
 
+    cell.deviceNameLabel.text=cell.recordModel.deviceName;
+          
+        
+        if ([cell.recordModel isReturn]) {
+            cell.isReturnedLabel.text=@"Returned";
+            cell.returnDateLabel.text=cell.recordModel.returnDateString;
+
+        } else {
+            cell.isReturnedLabel.text=@"Unreturned";
+        }
+        
+        return cell;
+    }
+
+    // Configure the cell...
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    HANRecordDetailViewController *recordDetailViewController=segue.destinationViewController;
+    recordDetailViewController.recordModel=((HANRecordTableViewCell *)sender).recordModel;
+    
+}
 @end

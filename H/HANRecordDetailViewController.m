@@ -7,7 +7,7 @@
 //
 
 #import "HANRecordDetailViewController.h"
-
+#import "HANRecordModel.h"
 @interface HANRecordDetailViewController ()
 
 @end
@@ -27,6 +27,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self configueView];
+}
+
+-(void)configueView{
+
+    self.deviceNameLabel.text=self.recordModel.deviceName;
+    self.nameLabel.text=self.recordModel.name;
+    self.phoneLabel.text=self.recordModel.phoneNumber;
+    self.returnDatelabel.text=self.recordModel.returnDateString;
+    self.borrowDateLabel.text=self.recordModel.borrowDateString;
+    if ([self.recordModel isReturn]) {
+//        [self.returnButton setHidden:YES];
+        [self.returnButton setEnabled:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,4 +61,13 @@
 }
 */
 
+- (IBAction)returnButton:(id)sender {
+//    [[HANDataModel shareDataModel]deleteRecord:self.recordModel];
+    [self.recordModel returnDevice];
+//    [[HANDataModel shareDataModel]addRecord:self.recordModel];
+    [self configueView];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    
+}
 @end
