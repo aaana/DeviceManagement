@@ -51,9 +51,9 @@
 
 -(void)configueNavigationBar{
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"Borrow"
-                                                                           style:UIBarButtonItemStyleDone
-                                                                          target:self
-                                                                          action:@selector(didClickBorrowButton)];
+        style:UIBarButtonItemStyleDone
+        target:self
+        action:@selector(didClickBorrowButton)];
     if (self.deviceModel.isBorrowed) {
 //        self.navigationItem.rightBarButtonItem =nil;
         [self.navigationItem.rightBarButtonItem setEnabled:NO];
@@ -69,7 +69,7 @@
     NSString *deviceName=self.deviceNameLabel.text;
     NSString *name=self.nameTextField.text;
     NSString *phone=self.phoneTextField.text;
-    HANRecordModel *recordModel=[[HANRecordModel alloc]initWithDeviceName:deviceName Name:name PhoneNumber:phone];
+    HANRecordModel *recordModel=[[HANRecordModel alloc]initWithDeviceName:deviceName Name:name PhoneNumber:phone DeviceIndex:self.deviceModel.deviceIndex];
      [[HANDataModel shareDataModel] addRecord:recordModel];
 //    [[HANDataModel shareDataModel]deleteDevice:self.deviceModel];
     self.deviceModel.isBorrowed = YES;

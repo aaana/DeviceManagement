@@ -30,6 +30,8 @@
 -(HANDeviceModel *)getDeviceAtIndex:(NSUInteger)index;
 -(HANRecordModel *)getRecordAtIndex:(NSUInteger)index;
 
+- (void)returnDeviceWithRecord:(HANRecordModel *)recordModel;
+
 -(void)saveData;
 
 

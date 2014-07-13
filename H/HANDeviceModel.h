@@ -13,6 +13,7 @@
 @property(nonatomic,strong)NSString *deviceName;
 @property(nonatomic,strong)NSString *deviceType;
 @property(nonatomic)BOOL isBorrowed;
+@property(nonatomic)NSInteger deviceIndex;
 -(id)initWithDeviceName:(NSString *)deviceName
              DeviceType:(NSString *)deviceType;
 @end

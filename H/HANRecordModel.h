@@ -16,10 +16,12 @@
 @property(nonatomic,copy)NSString *phoneNumber;
 @property(nonatomic,readonly)NSDate *borrowDate;//readonly只有get方法
 @property(nonatomic,readonly)NSDate *returnDate;
+@property(nonatomic)NSInteger deviceIndex;
 
 -(id)initWithDeviceName:(NSString *)deviceName
           Name:(NSString *)name
-PhoneNumber:(NSString *)phoneNumber;
+            PhoneNumber:(NSString *)phoneNumber
+            DeviceIndex:(NSInteger)deviceIndex;
 
 
 -(BOOL)isReturn;

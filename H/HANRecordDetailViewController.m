@@ -8,6 +8,7 @@
 
 #import "HANRecordDetailViewController.h"
 #import "HANRecordModel.h"
+#import "HANDataModel.h"
 @interface HANRecordDetailViewController ()
 
 @end
@@ -62,11 +63,11 @@
 */
 
 - (IBAction)returnButton:(id)sender {
-//    [[HANDataModel shareDataModel]deleteRecord:self.recordModel];
-    [self.recordModel returnDevice];
-//    [[HANDataModel shareDataModel]addRecord:self.recordModel];
-    [self configueView];
+    [[HANDataModel shareDataModel] returnDeviceWithRecord:self.recordModel];
+    
     [self.navigationController popViewControllerAnimated:YES];
+
+ 
     
     
 }

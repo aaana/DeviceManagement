@@ -37,8 +37,8 @@ static HANDataModel *dataModel=nil;
             [unarchiver finishDecoding];
         }
         
-        [self readDeviceData];
-        [self readRecordData];
+//        [self readDeviceData];
+//        [self readRecordData];
     }
     return self;
 }
@@ -102,30 +102,41 @@ static HANDataModel *dataModel=nil;
     [archiver finishEncoding];
     [deviceData writeToFile:[self deviceListPath] atomically:YES];
 }
--(void)readDeviceData{
-    NSString *devicelistpath=[self deviceListPath];
-    NSMutableData *deviceData=[[NSMutableData alloc]initWithContentsOfFile:devicelistpath];
-    if (deviceData.length!=0) {
-        NSKeyedUnarchiver *unarchiver=[[NSKeyedUnarchiver alloc]initForReadingWithData:deviceData];
-        self.deviceArray=[unarchiver decodeObject];
-        [unarchiver finishDecoding];
-    }
-}
--(void)readRecordData{
-    NSString *recordlistpath=[self recordListPath];
-    NSMutableData *recordData=[[NSMutableData alloc]initWithContentsOfFile:recordlistpath];
-    if(recordData.length!=0){
-        NSKeyedUnarchiver *unarchiver=[[NSKeyedUnarchiver alloc]initForReadingWithData:recordData];
-        self.recordArray=[unarchiver decodeObject];
-        [unarchiver finishDecoding];
-    }
-}
+//-(void)readDeviceData{
+//    NSString *devicelistpath=[self deviceListPath];
+//    NSMutableData *deviceData=[[NSMutableData alloc]initWithContentsOfFile:devicelistpath];
+//    if (deviceData.length!=0) {
+//        NSKeyedUnarchiver *unarchiver=[[NSKeyedUnarchiver alloc]initForReadingWithData:deviceData];
+//        self.deviceArray=[unarchiver decodeObject];
+//        [unarchiver finishDecoding];
+//    }
+//}
+//-(void)readRecordData{
+//    NSString *recordlistpath=[self recordListPath];
+//    NSMutableData *recordData=[[NSMutableData alloc]initWithContentsOfFile:recordlistpath];
+//    if(recordData.length!=0){
+//        NSKeyedUnarchiver *unarchiver=[[NSKeyedUnarchiver alloc]initForReadingWithData:recordData];
+//        self.recordArray=[unarchiver decodeObject];
+//        [unarchiver finishDecoding];
+//    }
+//}
 -(void)saveRecordData{
     NSMutableData *recordData=[[NSMutableData alloc]init];
     NSKeyedArchiver *archiver=[[NSKeyedArchiver alloc]initForWritingWithMutableData:recordData];
     [archiver encodeObject:self.recordArray];
     [archiver finishEncoding];
     [recordData writeToFile:[self recordListPath] atomically:YES];
+}
+
+- (void)returnDeviceWithRecord:(HANRecordModel *)recordModel {
+    [recordModel returnDevice];
+    
+    for (HANDeviceModel *dm in self.deviceArray) {
+        if (dm.deviceIndex == recordModel.deviceIndex) {
+            dm.isBorrowed = NO;
+            break;
+        }
+    }
 }
 
 #pragma mark Utils
